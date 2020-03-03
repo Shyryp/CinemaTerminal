@@ -1,0 +1,161 @@
+﻿<Page x:Class="CinemaTerminal.FilmsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CinemaTerminal"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FilmsPage">
+    <Page.Resources>
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="White" Direction="270" BlurRadius="20" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Label}" x:Key="LabelName">
+            <Setter Property="Control.FontSize" Value="25"/>
+            <!--<Setter Property="Foreground" Value="White"/>-->
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Control.FontSize" Value="21"/>
+            <!--<Setter Property="Foreground" Value="White"/>-->
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color = "Black" BlurRadius="20" ShadowDepth="5"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Control.FontSize" Value="25"/>
+            <Setter Property="Background" Value="#FFC80B50"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF9D0447"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key ="TimeB">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color = "Black" BlurRadius="5" ShadowDepth="5" Direction="300"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Control.FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalContentAlignment"  Value="Center"/>
+            <Setter Property="VerticalContentAlignment"  Value="Center"/>
+            <Setter Property="Background" Value="#FFC80B50"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF9D0447"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color = "White" BlurRadius="30" ShadowDepth="0" />
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="StyleNotPress">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color = "Black" BlurRadius="20" ShadowDepth="5"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Control.FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="#FFC80B50"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF9D0447"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        
+        <Style TargetType="{x:Type Button}" x:Key="StyleYesPress">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color = "White" BlurRadius="30" ShadowDepth="5" Direction="290"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Control.FontSize" Value="23"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="#FFAD1457"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF9D0447"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <DockPanel>
+            <Grid x:Name="gridDateButtons" MinHeight="50" Height="68" DockPanel.Dock="Top" Margin="0,25,0,25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="150*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <StackPanel x:Name="filmTime" Orientation="Vertical">
+
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</Page>
